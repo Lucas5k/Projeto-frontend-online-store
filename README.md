@@ -124,7 +124,7 @@ Neste projeto você criará uma versão simplificada, sem persistência no banco
 3. Faça alterações separadas por novas branchs criadas a partir da branch `main-group-XX`, criando uma nova branch para cada demanda
   * Verifique que você está na branch `main-group-XX`
     * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `main-group-XX`
+  * Se não estiver, mude para a branch **`main**-group-XX`
     * Exemplo: `git checkout main-group-XX && git pull`
   * Agora, crie uma branch para a demanda que você vai desenvolver do seu projeto
     * Você deve criar uma branch com uma breve descrição da demanda a ser desenvolvida
