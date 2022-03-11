@@ -29,6 +29,16 @@ class Main extends Component {
     const productList = response.results;
     console.log(productList);
     this.setState({ productList });
+
+    const NUMBER_OF_PRODUCTS = 2;
+    const categoriesList = document.querySelector('.categoriesList');
+    if (productList.length > NUMBER_OF_PRODUCTS) {
+      categoriesList.style.overflowY = 'hidden';
+      categoriesList.style.height = '100%';
+    } else {
+      categoriesList.style.overflowY = 'scroll';
+      categoriesList.style.height = '82vh';
+    }
   }
 
   handleButton = async ({ target }) => {
