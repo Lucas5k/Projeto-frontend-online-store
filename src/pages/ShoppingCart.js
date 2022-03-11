@@ -26,9 +26,7 @@ class ShoppingCart extends Component {
             </div>
           )
           : (
-            products.map((element) => {
-              return <CartItem key={ element.Id } />;
-            })
+            products.map((element) => <CartItem key={  } />)
           )}
       </div>
     );
