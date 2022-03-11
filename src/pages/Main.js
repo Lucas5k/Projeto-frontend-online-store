@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
-import { getCategories, getProductsFromQuery } from '../services/api';
 import CardProduct from '../components/CardProduct';
+import {
+  getCategories,
+  getProductsFromCategory,
+  getProductsFromQuery,
+} from '../services/api';
 
 class Main extends Component {
   constructor(props) {
@@ -9,7 +13,7 @@ class Main extends Component {
     this.state = {
       categoriesList: [],
       queryInput: '',
-      queryList: [],
+      productList: [],
     };
   }
 
@@ -20,16 +24,34 @@ class Main extends Component {
     });
   }
 
-  handleButton = async ({ target }) => {
-    const { value } = target;
-    const response = await getProductsFromQuery(value);
-    const queryList = response.results;
-    console.log(queryList);
-    this.setState({ queryList });
+  handleClick = async ({ target }) => {
+    const { id } = target;
+    const response = await getProductsFromCategory(id);
+    const productList = response.results;
+    console.log(productList);
+    this.setState({ productList });
 
     const NUMBER_OF_PRODUCTS = 2;
     const categoriesList = document.querySelector('.categoriesList');
-    if (queryList.length > NUMBER_OF_PRODUCTS) {
+    if (productList.length > NUMBER_OF_PRODUCTS) {
+      categoriesList.style.overflowY = 'hidden';
+      categoriesList.style.height = '100%';
+    } else {
+      categoriesList.style.overflowY = 'scroll';
+      categoriesList.style.height = '82vh';
+    }
+  }
+
+  handleButton = async ({ target }) => {
+    const { value } = target;
+    const response = await getProductsFromQuery(value);
+    const productList = response.results;
+    console.log(productList);
+    this.setState({ productList });
+
+    const NUMBER_OF_PRODUCTS = 2;
+    const categoriesList = document.querySelector('.categoriesList');
+    if (productList.length > NUMBER_OF_PRODUCTS) {
       categoriesList.style.overflowY = 'hidden';
       categoriesList.style.height = '100%';
     } else {
@@ -46,7 +68,7 @@ class Main extends Component {
   }
 
   render() {
-    const { categoriesList, queryInput, queryList } = this.state;
+    const { categoriesList, queryInput, productList } = this.state;
     return (
       <div>
         <Header />
@@ -55,12 +77,16 @@ class Main extends Component {
             <h3>Categorias</h3>
             {
               categoriesList.map(({ id, name }) => (
-                <p
-                  key={ id }
-                  data-testid="category"
-                >
-                  {name}
-                </p>
+                <div key={ id }>
+                  <button
+                    type="button"
+                    data-testid="category"
+                    id={ id }
+                    onClick={ this.handleClick }
+                  >
+                    {name}
+                  </button>
+                </div>
               ))
             }
           </aside>
@@ -88,9 +114,9 @@ class Main extends Component {
                 Pesquisar
               </button>
             </label>
-            <ul className={ queryList.length === 0 && 'noProduct' }>
+            <ul className={ productList.length === 0 && 'noProduct' }>
               {
-                queryList.length ? queryList.map((list) => (
+                productList.length ? productList.map((list) => (
                   <CardProduct key={ list.id } list={ list } />
                 ))
                   : <span>Nenhum produto foi encontrado</span>
