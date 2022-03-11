@@ -54,7 +54,7 @@ code {
   align-items: flex-start;
 }
 
-.main button {
+.categoriesList button {
   background-color: transparent;
   width: 100%;
   text-align: left;
@@ -63,14 +63,15 @@ code {
   font-size: 15px;
   margin-bottom: 12px;
   transition: .1s color;
+  outline: 0;
 }
 
-.main button:hover {
+.categoriesList button:hover {
   cursor: pointer;
   color: rgb(179, 179, 179);
 }
 
-.main button:active {
+.categoriesList button:active {
   color: rgb(124, 124, 124);
 }
 
@@ -115,6 +116,7 @@ code {
   padding: 2px 15px;
   background-color: rgb(51, 0, 190);
   border: 0;
+  outline: 0;
   color: white;
   font-weight: bold;
   font-size: 15px;
