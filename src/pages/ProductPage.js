@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import { getProductsFromId } from '../services/api';
 
@@ -11,7 +12,6 @@ class ProductPage extends Component {
   async componentDidMount() {
     const { match: { params: { id: productId } } } = this.props;
     const result = await getProductsFromId(productId);
-    console.log(result);
     const { thumbnail, price, title } = result;
     this.setState({ thumbnail, price, title });
   }
@@ -34,5 +34,13 @@ class ProductPage extends Component {
     );
   }
 }
+
+ProductPage.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default ProductPage;
