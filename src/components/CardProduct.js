@@ -7,7 +7,7 @@ class CardProduct extends Component {
     const { list } = this.props;
     console.log(list);
     return (
-      <Link to="/">
+      <Link to={ `/product/${list.id}` } data-testid="product-detail-link">
         <li data-testid="product">
           <span>{ list.title }</span>
           <img src={ list.thumbnail } alt={ list.title } />
@@ -20,6 +20,7 @@ class CardProduct extends Component {
 
 CardProduct.propTypes = {
   list: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
