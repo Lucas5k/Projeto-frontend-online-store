@@ -54,6 +54,26 @@ code {
   align-items: flex-start;
 }
 
+.main button {
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 12px;
+  transition: .1s color;
+}
+
+.main button:hover {
+  cursor: pointer;
+  color: rgb(179, 179, 179);
+}
+
+.main button:active {
+  color: rgb(124, 124, 124);
+}
+
 .categoriesList {
   padding: 10px 25px;
   height: 82vh;
@@ -73,6 +93,7 @@ code {
   flex-direction: column;
   align-items: center;
   height: 80vh;
+  max-width: 72%;
 }
 
 .productShowroom p {
@@ -106,4 +127,40 @@ code {
 
 .noProduct {
   margin: auto;
+}
+
+.productList {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.cardProduct {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.cardProduct li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+}
+
+.cardProduct img {
+  width: 100%;
+}
+
+.productCardInfo {
+  background-color: rgb(25, 0, 95);
+  padding: 15px 10px;
+  padding-bottom: 0;
+  transition: .15s background-color;
+}
+
+.cardProduct:hover .productCardInfo{
+  background-color: rgb(12, 0, 44);
 }

@@ -7,11 +7,20 @@ class CardProduct extends Component {
     const { list } = this.props;
     console.log(list);
     return (
-      <Link to={ `/product/${list.id}` } data-testid="product-detail-link">
+      <Link
+        to={ `/product/${list.id}` }
+        data-testid="product-detail-link"
+        className="cardProduct"
+      >
         <li data-testid="product">
-          <span>{ list.title }</span>
           <img src={ list.thumbnail } alt={ list.title } />
-          <p>{ list.price }</p>
+          <div className="productCardInfo">
+            <span>{ list.title }</span>
+            <p>
+              R$
+              { String(list.price.toFixed(2)).replace('.', ',') }
+            </p>
+          </div>
         </li>
       </Link>
     );
