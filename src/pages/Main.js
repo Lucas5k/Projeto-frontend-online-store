@@ -28,7 +28,6 @@ class Main extends Component {
     const { id } = target;
     const response = await getProductsFromCategory(id);
     const productList = response.results;
-    console.log(productList);
     this.setState({ productList });
 
     const NUMBER_OF_PRODUCTS = 2;
@@ -46,7 +45,6 @@ class Main extends Component {
     const { value } = target;
     const response = await getProductsFromQuery(value);
     const productList = response.results;
-    console.log(productList);
     this.setState({ productList });
 
     const NUMBER_OF_PRODUCTS = 2;
