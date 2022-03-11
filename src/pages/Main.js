@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
+import CardProduct from '../components/CardProduct';
 import {
   getCategories,
   getProductsFromCategory,
@@ -116,11 +117,7 @@ class Main extends Component {
             <ul className={ productList.length === 0 && 'noProduct' }>
               {
                 productList.length ? productList.map((list) => (
-                  <li data-testid="product" key={ list.id }>
-                    <span>{ list.title }</span>
-                    <img src={ list.thumbnail } alt={ list.title } />
-                    <p>{ list.price }</p>
-                  </li>
+                  <CardProduct key={ list.id } list={ list } />
                 ))
                   : <span>Nenhum produto foi encontrado</span>
               }
