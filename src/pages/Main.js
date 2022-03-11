@@ -112,7 +112,7 @@ class Main extends Component {
                 Pesquisar
               </button>
             </label>
-            <ul className={ productList.length === 0 && 'noProduct' }>
+            <ul className={ productList.length === 0 ? 'noProduct' : 'productList' }>
               {
                 productList.length ? productList.map((list) => (
                   <CardProduct key={ list.id } list={ list } />
