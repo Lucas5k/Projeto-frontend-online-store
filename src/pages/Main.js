@@ -22,9 +22,6 @@ class Main extends Component {
     this.setState({
       categoriesList,
     });
-    if (!localStorage.getItem('cartProducts')) {
-      localStorage.setItem('cartProducts', '[]');
-    }
   }
 
   handleClick = async ({ target }) => {
