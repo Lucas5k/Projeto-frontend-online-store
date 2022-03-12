@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CartItem from '../components/CartItem';
+import Header from '../components/Header';
 
 class ShoppingCart extends Component {
   constructor() {
@@ -18,20 +19,23 @@ class ShoppingCart extends Component {
   render() {
     const { products } = this.state;
     return (
-      <div>
-        {!products.length
-          ? (
-            <div>
-              <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
-            </div>
-          )
-          : (
-            products.map((element) => (<CartItem
-              key={ element.id }
-              product={ element }
-            />))
-          )}
-      </div>
+      <>
+        <Header />
+        <div>
+          {!products.length
+            ? (
+              <div>
+                <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+              </div>
+            )
+            : (
+              products.map((element) => (<CartItem
+                key={ element.id }
+                product={ element }
+              />))
+            )}
+        </div>
+      </>
     );
   }
 }
