@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
 import CardProduct from '../components/CardProduct';
+import Header from '../components/Header';
 import {
   getCategories,
   getProductsFromCategory,
