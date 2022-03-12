@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
 import CardProduct from '../components/CardProduct';
+import Header from '../components/Header';
 import {
   getCategories,
   getProductsFromCategory,
-  getProductsFromQuery,
+  getProductsFromQuery
 } from '../services/api';
 
 class Main extends Component {
@@ -22,6 +22,9 @@ class Main extends Component {
     this.setState({
       categoriesList,
     });
+    if (!localStorage.getItem('cartProducts')) {
+      localStorage.setItem('cartProducts', '[]');
+    }
   }
 
   handleClick = async ({ target }) => {
