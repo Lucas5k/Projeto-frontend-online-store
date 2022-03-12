@@ -1,12 +1,9 @@
 # Sumário
+
+- [Como desenvolver](#como-desenvolver)
   - [Documentação da API do Mercado Livre](#documentação-da-api-do-mercado-livre)
     - [Exemplo de requisição para listar categorias](exemplo-de-requisição-para-listar-categorias)
     - [Exemplo de requisição de busca](#exemplo-de-requisição-de-busca)
-- [Como desenvolver](#como-desenvolver)
-- [Requisitos do projeto](#requisitos-do-projeto)
-  - [Grupos de prioridade](#grupos-de-prioridade)
-  - [Requisitos Bônus](#requisitos-bônus)
-  - [Lista de requisitos](#lista-de-requisitos)
 
     `Requisitos Obrigatórios`
     - [1. Implemente o módulo de acesso à api do Mercado Livre](#1-implemente-o-módulo-de-acesso-à-api-do-mercado-livre)
@@ -38,7 +35,44 @@
 - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
 - [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos finais](#avisos-finais)
-- 
+
+
+### Execução de testes unitários
+
+Vamos utilizar [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) para execução dos testes unitários. Esse _framework_ de testes utiliza algumas marcações no código para verificar a solução proposta. Uma dessas marcações é o atributo `data-testid` e faremos uso dele aqui.
+
+Na descrição dos requisitos (logo abaixo) será pedido que seja feita a adição de atributos `data-testid` nos elementos _HTML_. Vamos a um exemplo para deixar evidente essa configuração: se o requisito pedir _"crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`, você pode escrever_:
+
+```html
+<button data-testid="my-action" ></button>
+```
+
+ou
+
+```html
+<a data-testid="my-action"><a/>
+```
+
+Ou seja, o atributo `data-testid="my-action"` servirá para o React Testing Library(RTL) identificar o elemento e, dessa forma, conseguiremos realizar testes unitários focados no comportamento da aplicação. Afim de verificar a solução proposta, você pode executar todos os testes unitários localmente com o comando abaixo:
+
+```bash
+npm test
+```
+
+Você pode executar os testes para um único requisito passando, como parâmetro para o comando, o nome do arquivo de teste alvo:
+
+```bash
+npm test src/__tests__/requirement1.test.js
+```
+
+### Dica: desativando testes
+
+Caso queira avaliar apenas um tópico do requisito, você  pode usar o `.only` após o `it`. Com isso, será possível que apenas esse tópico rode localmente e seja avaliado.
+
+![image](it-only.png)
+![image](only-one-green.png)
+
+
 ## Documentação da API do Mercado Livre
 
 Sua página _web_ irá consumir os dados da API do _Mercado Livre_ para realizar a busca de itens da sua loja online. Para realizar essas buscas, vocês precisarão consultar os seguintes _endpoints_:

@@ -26,7 +26,7 @@ class ShoppingCart extends Component {
   removeItem = (product) => {
     let cartItem = localStorage.getItem('cartProducts');
     cartItem = JSON.parse(cartItem);
-    cartItem.splice(cartItem.findIndex((x) => x.id === product.id), 1);
+    cartItem.splice(cartItem.indexOf(product), 1);
     localStorage.setItem('cartProducts', JSON.stringify(cartItem));
   }
 
