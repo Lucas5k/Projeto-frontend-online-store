@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import {
   getCategories,
   getProductsFromCategory,
-  getProductsFromQuery
+  getProductsFromQuery,
 } from '../services/api';
 
 class Main extends Component {
