@@ -8,20 +8,58 @@ class ShoppingCart extends Component {
 
     this.state = {
       products: [],
+      filterProducts: [],
     };
   }
 
   componentDidMount() {
-    const cartItems = localStorage.getItem('cartProducts');
-    this.setState({ products: JSON.parse(cartItems) });
+    this.createListItem();
+  }
+
+  addItem = (product) => {
+    let cartItem = localStorage.getItem('cartProducts');
+    cartItem = JSON.parse(cartItem);
+    cartItem.push(product);
+    localStorage.setItem('cartProducts', JSON.stringify(cartItem));
+  }
+
+  removeItem = (product) => {
+    let cartItem = localStorage.getItem('cartProducts');
+    cartItem = JSON.parse(cartItem);
+    cartItem.splice(cartItem.findIndex((x) => x.id === product.id), 1);
+    localStorage.setItem('cartProducts', JSON.stringify(cartItem));
+  }
+
+  handleClick = (event) => {
+    const { value, name } = event.target;
+    if (name === 'add') {
+      this.addItem(JSON.parse(value));
+    } else {
+      this.removeItem(JSON.parse(value));
+    }
+    this.createListItem();
+  }
+
+  createListItem = () => {
+    let cartItems = localStorage.getItem('cartProducts');
+    cartItems = JSON.parse(cartItems);
+    const set = new Set();
+    const filterProducts = cartItems.filter((ele) => {
+      const items = JSON.stringify(ele);
+      return !set.has(items) && set.add(items);
+    });
+    this.setState({
+      filterProducts,
+      products: cartItems,
+    });
   }
 
   render() {
-    const { products } = this.state;
+    const { products, filterProducts } = this.state;
     return (
-      <>
+      <div>
         <Header />
-        <div>
+        <main className="cartMain">
           {!products.length
             ? (
               <div>
@@ -29,13 +67,22 @@ class ShoppingCart extends Component {
               </div>
             )
             : (
-              products.map((element) => (<CartItem
+              filterProducts.map((element) => (<CartItem
                 key={ element.id }
+                handle={ this.handleClick }
                 product={ element }
+                count={
+                  products.reduce((acc, curr) => {
+                    if (curr.id === element.id) {
+                      acc += 1;
+                    }
+                    return acc;
+                  }, 0)
+                }
               />))
             )}
-        </div>
-      </>
+        </main>
+      </div>
     );
   }
 }

@@ -218,3 +218,57 @@ code {
   font-weight: bold;
   font-size: 15px;
 }
+
+.cartMain {
+  padding: 30px 15%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.everyCart {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(122, 122, 122);
+}
+
+.cartItem img {
+  width: 150px;
+}
+
+.cartItem h1 {
+  width: 60%;
+}
+
+.qntControl {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 10%;
+}
+
+.qntControl div{
+  background-color: lightgoldenrodyellow;
+  color: black;
+  width: 30%;
+  height: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.total {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background-color: rgb(78, 78, 78);
+  padding: 5px 8px; 
+  text-align: right;
+}
