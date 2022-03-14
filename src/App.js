@@ -8,6 +8,7 @@ import ShoppingCart from './pages/ShoppingCart';
 if (!localStorage.getItem('cartProducts')) {
   localStorage.setItem('cartProducts', '[]');
 }
+
 class App extends Component {
   render() {
     return (
