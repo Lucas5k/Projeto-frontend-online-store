@@ -26,10 +26,11 @@ class CardProduct extends Component {
   render() {
     const { list } = this.props;
     return (
-      <div className="cardProduct">
+      <div className="singleCardProduct">
         <Link
           to={ `/product/${list.id}` }
           data-testid="product-detail-link"
+          className="cardProduct"
         >
           <li data-testid="product">
             <img src={ list.thumbnail } alt={ list.title } />
@@ -47,9 +48,9 @@ class CardProduct extends Component {
           data-testid="product-add-to-cart"
           onClick={ this.handleCLick }
           value={ JSON.stringify(list) }
+          className="addCartBtn"
         >
           Adicionar ao Carrinho
-
         </button>
       </div>
     );

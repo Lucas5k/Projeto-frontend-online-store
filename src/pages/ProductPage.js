@@ -32,15 +32,18 @@ class ProductPage extends Component {
   render() {
     const { thumbnail, price, title, result } = this.state;
     return (
-      <div>
+      <>
         <Header />
-        <main>
-          <h1 data-testid="product-detail-name">{title}</h1>
-          <section>
+        <main className="productPageMain">
+          <aside>
             <img src={ thumbnail } alt={ title } />
-            <div>
-              <p>{price}</p>
-            </div>
+          </aside>
+          <section>
+            <h1 data-testid="product-detail-name">{title}</h1>
+            <p>
+              R$
+              {String(Number(price).toFixed(2)).replace('.', ',')}
+            </p>
             <button
               type="button"
               data-testid="product-detail-add-to-cart"
@@ -48,11 +51,10 @@ class ProductPage extends Component {
               value={ JSON.stringify(result) }
             >
               Adicionar ao Carrinho
-
             </button>
           </section>
         </main>
-      </div>
+      </>
     );
   }
 }

@@ -6,29 +6,43 @@ class CartItem extends Component {
     const { product, count, handle } = this.props;
     const { title, thumbnail, price } = product;
     return (
-      <article>
-        <img src={ thumbnail } alt={ title } />
-        <h1 data-testid="shopping-cart-product-name">{ title }</h1>
-        <p>{ price }</p>
-        <button
-          data-testid="product-decrease-quantity"
-          type="button"
-          value={ JSON.stringify(product) }
-          name="less"
-          onClick={ handle }
-        >
-          -
-        </button>
-        <p data-testid="shopping-cart-product-quantity">{ count }</p>
-        <button
-          data-testid="product-increase-quantity"
-          type="button"
-          value={ JSON.stringify(product) }
-          name="add"
-          onClick={ handle }
-        >
-          +
-        </button>
+      <article className="everyCart">
+        <div className="cartItem">
+          <img src={ thumbnail } alt={ title } />
+          <h1 data-testid="shopping-cart-product-name">{ title }</h1>
+          <p>
+            R$
+            { String(Number(price).toFixed(2)).replace('.', ',') }
+          </p>
+          <div className="qntControl">
+            <button
+              data-testid="product-decrease-quantity"
+              type="button"
+              value={ JSON.stringify(product) }
+              name="less"
+              onClick={ handle }
+            >
+              -
+            </button>
+            <div>
+              <p data-testid="shopping-cart-product-quantity">{ count }</p>
+            </div>
+            <button
+              data-testid="product-increase-quantity"
+              type="button"
+              value={ JSON.stringify(product) }
+              name="add"
+              onClick={ handle }
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div className="total">
+          Total:
+          {' '}
+          { String(Number(price * count).toFixed(2)).replace('.', ',') }
+        </div>
       </article>
     );
   }
