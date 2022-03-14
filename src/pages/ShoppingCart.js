@@ -26,7 +26,19 @@ class ShoppingCart extends Component {
   removeItem = (product) => {
     let cartItem = localStorage.getItem('cartProducts');
     cartItem = JSON.parse(cartItem);
-    cartItem.splice(cartItem.indexOf(product), 1);
+
+    let delIndex = 0;
+    const lastFoundIndex = () => {
+      cartItem.forEach((x, i) => {
+        if (x.id === product.id) {
+          delIndex = i;
+        }
+      });
+    };
+
+    lastFoundIndex();
+
+    cartItem.splice(delIndex, 1);
     localStorage.setItem('cartProducts', JSON.stringify(cartItem));
   }
 
