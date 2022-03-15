@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import CartBtn from './CartBtn';
 
 class Header extends Component {
   render() {
+    const { cartCount } = this.props;
     return (
       <header className="header">
         <div className="logoTitle">
@@ -12,10 +14,14 @@ class Header extends Component {
           </Link>
           <h1>Front-End Online Store</h1>
         </div>
-        <CartBtn />
+        <CartBtn cartCount={ cartCount } />
       </header>
     );
   }
 }
+
+Header.propTypes = {
+  cartCount: PropTypes.string,
+}.isRequired;
 
 export default Header;

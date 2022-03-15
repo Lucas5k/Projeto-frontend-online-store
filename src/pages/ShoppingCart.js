@@ -50,6 +50,7 @@ class ShoppingCart extends Component {
       this.removeItem(JSON.parse(value));
     }
     this.createListItem();
+    this.handleCart();
   }
 
   createListItem = () => {
@@ -66,11 +67,18 @@ class ShoppingCart extends Component {
     });
   }
 
+  handleCart = () => {
+    const cartItems = localStorage.getItem('cartProducts');
+    const cartCount = JSON.parse(cartItems).length;
+    this.setState({ cartCount });
+    localStorage.setItem('quant', cartCount);
+  }
+
   render() {
-    const { products, filterProducts } = this.state;
+    const { products, filterProducts, cartCount } = this.state;
     return (
       <div>
-        <Header />
+        <Header cartCount={ cartCount } />
         <main className="cartMain">
           {!products.length
             ? (

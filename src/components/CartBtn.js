@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class CartBtn extends Component {
   constructor() {
@@ -12,9 +13,21 @@ class CartBtn extends Component {
     this.handleCart();
   }
 
+  componentDidUpdate(prevProps) {
+    const { cartCount } = this.props;
+    if (cartCount !== prevProps.cartCount) {
+      this.handleCart();
+    }
+  }
+
   handleCart = () => {
-    const cartItems = localStorage.getItem('cartProducts');
-    this.setState({ cartCount: JSON.parse(cartItems).length });
+    const { cartCount } = this.props;
+    if (!cartCount) {
+      const cartItems = localStorage.getItem('quant');
+      this.setState({ cartCount: cartItems });
+    } else {
+      this.setState({ cartCount });
+    }
   }
 
   render() {
@@ -29,5 +42,9 @@ class CartBtn extends Component {
     );
   }
 }
+
+CartBtn.propTypes = {
+  cartCount: PropTypes.string,
+}.isRequired;
 
 export default CartBtn;

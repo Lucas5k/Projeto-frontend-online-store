@@ -65,11 +65,18 @@ class Main extends Component {
     });
   }
 
+  handleCart = () => {
+    const cartItems = localStorage.getItem('cartProducts');
+    const cartCount = JSON.parse(cartItems).length;
+    this.setState({ cartCount });
+    localStorage.setItem('quant', cartCount);
+  }
+
   render() {
-    const { categoriesList, queryInput, productList } = this.state;
+    const { categoriesList, queryInput, productList, cartCount } = this.state;
     return (
       <div>
-        <Header />
+        <Header cartCount={ cartCount } />
         <main className="main">
           <aside className="categoriesList">
             <h3>Categorias</h3>
@@ -115,7 +122,11 @@ class Main extends Component {
             <ul className={ productList.length === 0 ? 'noProduct' : 'productList' }>
               {
                 productList.length ? productList.map((list) => (
-                  <CardProduct key={ list.id } list={ list } />
+                  <CardProduct
+                    key={ list.id }
+                    list={ list }
+                    handleCart={ this.handleCart }
+                  />
                 ))
                   : <span>Nenhum produto foi encontrado</span>
               }
