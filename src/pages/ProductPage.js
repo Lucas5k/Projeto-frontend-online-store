@@ -19,8 +19,9 @@ class ProductPage extends Component {
   async componentDidMount() {
     const { match: { params: { id: productId } } } = this.props;
     const result = await getProductsFromId(productId);
-    const { thumbnail, price, title } = result;
-    this.setState({ thumbnail, price, title, result });
+    const { thumbnail, price, title, shipping } = result;
+    const { free_shipping: freeShipping } = shipping;
+    this.setState({ thumbnail, price, title, result, freeShipping });
     if (!localStorage.getItem(productId)) {
       localStorage.setItem(productId, '[]');
       this.setState({
@@ -95,7 +96,8 @@ class ProductPage extends Component {
       evaluation,
       productResume,
       arraylenght,
-      cartCount } = this.state;
+      cartCount,
+      freeShipping } = this.state;
     return (
       <>
         <Header cartCount={ cartCount } />
@@ -174,6 +176,12 @@ class ProductPage extends Component {
               Submit
             </button>
           </section>
+          {freeShipping
+          && (
+            <span data-testid="free-shipping">
+              Frete Grátis!!
+            </span>
+          )}
           <div>
             {
               arraylenght
