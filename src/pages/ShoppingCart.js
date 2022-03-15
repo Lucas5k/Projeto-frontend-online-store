@@ -77,7 +77,7 @@ class ShoppingCart extends Component {
     this.setState({ cartCount });
     localStorage.setItem('quant', cartCount);
   }
-  
+
   redirectToCheckout = () => {
     this.setState({
       checkout: true,
@@ -85,8 +85,7 @@ class ShoppingCart extends Component {
   }
 
   render() {
-    const { products, filterProducts, checkout } = this.state;
-    
+    const { products, filterProducts, checkout, cartCount } = this.state;
     return (
       <div>
         <Header cartCount={ cartCount } />
