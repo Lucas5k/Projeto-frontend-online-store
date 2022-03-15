@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 import Header from '../components/Header';
 
@@ -9,6 +10,7 @@ class ShoppingCart extends Component {
     this.state = {
       products: [],
       filterProducts: [],
+      checkout: false,
     };
   }
 
@@ -66,8 +68,14 @@ class ShoppingCart extends Component {
     });
   }
 
+  redirectToCheckout = () => {
+    this.setState({
+      checkout: true,
+    });
+  }
+
   render() {
-    const { products, filterProducts } = this.state;
+    const { products, filterProducts, checkout } = this.state;
     return (
       <div>
         <Header />
@@ -93,6 +101,14 @@ class ShoppingCart extends Component {
                 }
               />))
             )}
+          <button
+            data-testid="checkout-products"
+            type="button"
+            onClick={ this.redirectToCheckout }
+          >
+            Finalizar compra
+          </button>
+          {(checkout && <Redirect to="/checkout" />)}
         </main>
       </div>
     );
