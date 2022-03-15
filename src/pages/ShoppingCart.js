@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CartItem from '../components/CartItem';
 import Header from '../components/Header';
 
+// Muito legal
+
 class ShoppingCart extends Component {
   constructor() {
     super();
