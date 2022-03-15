@@ -12,6 +12,7 @@ class ProductPage extends Component {
       rating: '',
       productResume: [],
       arraylenght: true,
+      cartCount: '',
     };
   }
 
@@ -31,6 +32,7 @@ class ProductPage extends Component {
     this.setState({
       productResume: aval1,
     });
+    this.handleCart();
   }
 
   handleCLick = ({ target }) => {
@@ -44,6 +46,7 @@ class ProductPage extends Component {
       cart.push(value);
       localStorage.setItem('cartProducts', JSON.stringify(cart));
     }
+    this.handleCart();
   }
 
   handleAvaliation = () => {
@@ -75,6 +78,13 @@ class ProductPage extends Component {
     });
   }
 
+  handleCart = () => {
+    const cartItems = localStorage.getItem('cartProducts');
+    const cartCount = JSON.parse(cartItems).length;
+    this.setState({ cartCount });
+    localStorage.setItem('quant', cartCount);
+  }
+
   render() {
     const {
       thumbnail,
@@ -84,10 +94,11 @@ class ProductPage extends Component {
       email,
       evaluation,
       productResume,
-      arraylenght } = this.state;
+      arraylenght,
+      cartCount } = this.state;
     return (
       <>
-        <Header />
+        <Header cartCount={ cartCount } />
         <main className="productPageMain">
           <aside>
             <img src={ thumbnail } alt={ title } />

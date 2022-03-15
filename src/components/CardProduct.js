@@ -11,6 +11,7 @@ class CardProduct extends Component {
   }
 
   handleCLick = ({ target }) => {
+    const { handleCart } = this.props;
     let { value } = target;
     let cart = localStorage.getItem('cartProducts');
     cart = JSON.parse(cart);
@@ -21,6 +22,7 @@ class CardProduct extends Component {
       cart.push(value);
       localStorage.setItem('cartProducts', JSON.stringify(cart));
     }
+    handleCart();
   }
 
   render() {
@@ -58,6 +60,7 @@ class CardProduct extends Component {
 }
 
 CardProduct.propTypes = {
+  handleCart: PropTypes.func.isRequired,
   list: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,

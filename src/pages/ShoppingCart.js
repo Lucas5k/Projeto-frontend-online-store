@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 import Header from '../components/Header';
 
+// Muito legal
+
 class ShoppingCart extends Component {
   constructor() {
     super();
@@ -52,6 +54,7 @@ class ShoppingCart extends Component {
       this.removeItem(JSON.parse(value));
     }
     this.createListItem();
+    this.handleCart();
   }
 
   createListItem = () => {
@@ -68,6 +71,13 @@ class ShoppingCart extends Component {
     });
   }
 
+  handleCart = () => {
+    const cartItems = localStorage.getItem('cartProducts');
+    const cartCount = JSON.parse(cartItems).length;
+    this.setState({ cartCount });
+    localStorage.setItem('quant', cartCount);
+  }
+
   redirectToCheckout = () => {
     this.setState({
       checkout: true,
@@ -75,10 +85,10 @@ class ShoppingCart extends Component {
   }
 
   render() {
-    const { products, filterProducts, checkout } = this.state;
+    const { products, filterProducts, checkout, cartCount } = this.state;
     return (
       <div>
-        <Header />
+        <Header cartCount={ cartCount } />
         <main className="cartMain">
           {!products.length
             ? (
