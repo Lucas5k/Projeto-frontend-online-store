@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class CartItem extends Component {
   render() {
     const { product, count, handle } = this.props;
-    const { title, thumbnail, price } = product;
+    const { title, thumbnail, price, available_quantity: availableQuantity } = product;
     return (
       <article className="everyCart">
         <div className="cartItem">
@@ -33,6 +33,7 @@ class CartItem extends Component {
               value={ JSON.stringify(product) }
               name="add"
               onClick={ handle }
+              disabled={ count >= availableQuantity }
             >
               +
             </button>
@@ -53,6 +54,7 @@ CartItem.propTypes = {
     title: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    available_quantity: PropTypes.number.isRequired,
   }).isRequired,
   count: PropTypes.number.isRequired,
   handle: PropTypes.func.isRequired,
