@@ -12,8 +12,10 @@ class ProductPage extends Component {
   async componentDidMount() {
     const { match: { params: { id: productId } } } = this.props;
     const result = await getProductsFromId(productId);
-    const { thumbnail, price, title } = result;
-    this.setState({ thumbnail, price, title, result });
+    const { thumbnail, price, title, shipping } = result;
+    const { free_shipping: freeShipping } = shipping;
+    this.setState({ thumbnail, price, title, result, freeShipping });
+    console.log(freeShipping);
   }
 
   handleCLick = ({ target }) => {
@@ -30,7 +32,7 @@ class ProductPage extends Component {
   }
 
   render() {
-    const { thumbnail, price, title, result } = this.state;
+    const { thumbnail, price, title, result, freeShipping } = this.state;
     return (
       <>
         <Header />
@@ -53,6 +55,12 @@ class ProductPage extends Component {
               Adicionar ao Carrinho
             </button>
           </section>
+          {freeShipping
+          && (
+            <span data-testid="free-shipping">
+              Frete Grátis!!
+            </span>
+          )}
         </main>
       </>
     );

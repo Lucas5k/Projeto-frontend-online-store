@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 class CardProduct extends Component {
   constructor() {
@@ -25,6 +25,7 @@ class CardProduct extends Component {
 
   render() {
     const { list } = this.props;
+    const { shipping: { free_shipping: freeShipping } } = list;
     return (
       <div className="singleCardProduct">
         <Link
@@ -52,6 +53,12 @@ class CardProduct extends Component {
         >
           Adicionar ao Carrinho
         </button>
+        {freeShipping
+          && (
+            <span data-testid="free-shipping">
+              Frete Grátis!!
+            </span>
+          )}
       </div>
     );
   }
