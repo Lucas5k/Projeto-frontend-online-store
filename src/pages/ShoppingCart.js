@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 import Header from '../components/Header';
+
+// Muito legal
 
 class ShoppingCart extends Component {
   constructor() {
@@ -9,6 +12,7 @@ class ShoppingCart extends Component {
     this.state = {
       products: [],
       filterProducts: [],
+      checkout: false,
     };
   }
 
@@ -50,6 +54,7 @@ class ShoppingCart extends Component {
       this.removeItem(JSON.parse(value));
     }
     this.createListItem();
+    this.handleCart();
   }
 
   createListItem = () => {
@@ -66,11 +71,24 @@ class ShoppingCart extends Component {
     });
   }
 
+  handleCart = () => {
+    const cartItems = localStorage.getItem('cartProducts');
+    const cartCount = JSON.parse(cartItems).length;
+    this.setState({ cartCount });
+    localStorage.setItem('quant', cartCount);
+  }
+
+  redirectToCheckout = () => {
+    this.setState({
+      checkout: true,
+    });
+  }
+
   render() {
-    const { products, filterProducts } = this.state;
+    const { products, filterProducts, checkout, cartCount } = this.state;
     return (
       <div>
-        <Header />
+        <Header cartCount={ cartCount } />
         <main className="cartMain">
           {!products.length
             ? (
@@ -93,6 +111,14 @@ class ShoppingCart extends Component {
                 }
               />))
             )}
+          <button
+            data-testid="checkout-products"
+            type="button"
+            onClick={ this.redirectToCheckout }
+          >
+            Finalizar compra
+          </button>
+          {(checkout && <Redirect to="/checkout" />)}
         </main>
       </div>
     );
