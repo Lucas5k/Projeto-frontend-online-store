@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import FreeShipping from '../components/FreeShipping';
 import Header from '../components/Header';
 import { getProductsFromId } from '../services/api';
 
@@ -107,21 +108,7 @@ class ProductPage extends Component {
           </aside>
           <section>
             <h1 data-testid="product-detail-name">{title}</h1>
-            <div className="priceAndShipping">
-              <p>
-                R$
-                {String(Number(price).toFixed(2)).replace('.', ',')}
-              </p>
-              {freeShipping
-            && (
-              <div>
-                <img src="https://static.thenounproject.com/png/1767562-200.png" alt="Free shipping icon." />
-                <span data-testid="free-shipping">
-                  Frete grátis
-                </span>
-              </div>
-            )}
-            </div>
+            <FreeShipping price={ price } freeShipping={ freeShipping } />
             <button
               type="button"
               data-testid="product-detail-add-to-cart"

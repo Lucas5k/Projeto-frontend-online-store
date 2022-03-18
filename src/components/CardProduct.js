@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import FreeShipping from './FreeShipping';
 
 class CardProduct extends Component {
   constructor() {
@@ -39,10 +40,11 @@ class CardProduct extends Component {
             <img src={ list.thumbnail } alt={ list.title } />
             <div className="productCardInfo">
               <span>{ list.title }</span>
-              <p>
+              {/* <p>
                 R$
                 { String(list.price.toFixed(2)).replace('.', ',') }
-              </p>
+              </p> */}
+              <FreeShipping freeShipping={ freeShipping } price={ list.price } />
             </div>
           </li>
         </Link>
@@ -55,12 +57,12 @@ class CardProduct extends Component {
         >
           Adicionar ao Carrinho
         </button>
-        {freeShipping
+        {/* {freeShipping
           && (
             <span data-testid="free-shipping">
               Frete Grátis!!
             </span>
-          )}
+          )} */}
       </div>
     );
   }

@@ -149,7 +149,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 200px;
+  width: 250px; 
 }
 
 .cardProduct img {
@@ -317,6 +317,6 @@ code {
   align-items: center;
 }
 
-.rate input[name="rating"] {
-  display: block;
+.rate button {
+  margin-top: 20px;
 }
