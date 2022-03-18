@@ -115,6 +115,7 @@ class ShoppingCart extends Component {
             data-testid="checkout-products"
             type="button"
             onClick={ this.redirectToCheckout }
+            className="final-button"
           >
             Finalizar compra
           </button>
