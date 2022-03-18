@@ -37,6 +37,11 @@ code {
   font-size: 30px;
 }
 
+.cartLink {
+  text-decoration: none;
+  position: relative;
+}
+
 .cartLink div {
   background-color: lightgray;
   padding: 10px 12px;
@@ -47,6 +52,26 @@ code {
 .cartLink img {
   width: 30px;
   align-self: center;
+}
+
+.cartLink div > div  {
+  background-color: blue;
+  border-radius: 100px;
+  width: 5px;
+  height: 10px;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartLink span {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
 }
 
 .main {
