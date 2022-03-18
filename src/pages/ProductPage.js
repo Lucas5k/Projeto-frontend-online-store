@@ -107,10 +107,21 @@ class ProductPage extends Component {
           </aside>
           <section>
             <h1 data-testid="product-detail-name">{title}</h1>
-            <p>
-              R$
-              {String(Number(price).toFixed(2)).replace('.', ',')}
-            </p>
+            <div className="priceAndShipping">
+              <p>
+                R$
+                {String(Number(price).toFixed(2)).replace('.', ',')}
+              </p>
+              {freeShipping
+            && (
+              <div>
+                <img src="https://static.thenounproject.com/png/1767562-200.png" alt="Free shipping icon." />
+                <span data-testid="free-shipping">
+                  Frete grátis
+                </span>
+              </div>
+            )}
+            </div>
             <button
               type="button"
               data-testid="product-detail-add-to-cart"
@@ -119,69 +130,71 @@ class ProductPage extends Component {
             >
               Adicionar ao Carrinho
             </button>
-            <input
-              data-testid="product-detail-email"
-              type="text"
-              name="email"
-              value={ email }
-              onChange={ this.onChange }
-            />
-            <textarea
-              data-testid="product-detail-evaluation"
-              type="text"
-              name="evaluation"
-              value={ evaluation }
-              onChange={ this.onChange }
-            />
-            <input
-              name="rating"
-              type="radio"
-              value="1"
-              onChange={ this.onChange }
-              data-testid="1-rating"
-            />
-            <input
-              name="rating"
-              type="radio"
-              value="2"
-              onChange={ this.onChange }
-              data-testid="2-rating"
-            />
-            <input
-              name="rating"
-              type="radio"
-              value="3"
-              onChange={ this.onChange }
-              data-testid="3-rating"
-            />
-            <input
-              name="rating"
-              type="radio"
-              value="4"
-              onChange={ this.onChange }
-              data-testid="4-rating"
-            />
-            <input
-              name="rating"
-              type="radio"
-              value="5"
-              onChange={ this.onChange }
-              data-testid="5-rating"
-            />
-            <button
-              data-testid="submit-review-btn"
-              onClick={ this.handleAvaliation }
-              type="button"
-            >
-              Submit
-            </button>
+            <div className="rate">
+              <p>Avaliação: </p>
+              <span>Nome: </span>
+              <input
+                data-testid="product-detail-email"
+                type="text"
+                name="email"
+                value={ email }
+                onChange={ this.onChange }
+                className="namefield"
+              />
+              <span>Comentário:</span>
+              <textarea
+                data-testid="product-detail-evaluation"
+                type="text"
+                name="evaluation"
+                value={ evaluation }
+                onChange={ this.onChange }
+                className="txtareafield"
+              />
+              <span>Nota: </span>
+              <input
+                name="rating"
+                type="radio"
+                value="1"
+                onChange={ this.onChange }
+                data-testid="1-rating"
+              />
+              <input
+                name="rating"
+                type="radio"
+                value="2"
+                onChange={ this.onChange }
+                data-testid="2-rating"
+              />
+              <input
+                name="rating"
+                type="radio"
+                value="3"
+                onChange={ this.onChange }
+                data-testid="3-rating"
+              />
+              <input
+                name="rating"
+                type="radio"
+                value="4"
+                onChange={ this.onChange }
+                data-testid="4-rating"
+              />
+              <input
+                name="rating"
+                type="radio"
+                value="5"
+                onChange={ this.onChange }
+                data-testid="5-rating"
+              />
+              <button
+                data-testid="submit-review-btn"
+                onClick={ this.handleAvaliation }
+                type="button"
+              >
+                Submit
+              </button>
+            </div>
           </section>
-          {freeShipping
-          && (
-            <span data-testid="free-shipping">
-              Frete Grátis!!
-            </span>
-          )}
           <div>
             {
               arraylenght

@@ -277,3 +277,46 @@ code {
   text-align: center;
   margin: auto;
 }
+
+.rate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.namefield {
+  margin-bottom: 20px;
+}
+
+.txtareafield {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 80px;
+  padding: 4px;
+  font-size: 15px;
+}
+
+.priceAndShipping {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.priceAndShipping img {
+  width: 30px;
+  filter: brightness(3) contrast(3) hue-rotate(-188deg) invert(1) saturate(1.76) sepia(0.61) ;
+  margin-right: 10px;
+}
+
+.priceAndShipping span {
+  color: greenyellow;
+}
+
+.priceAndShipping div {
+  display: flex;
+  align-items: center;
+}
+
+.rate input[name="rating"] {
+  display: block;
+}
