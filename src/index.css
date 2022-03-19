@@ -345,3 +345,45 @@ code {
 .rate button {
   margin-top: 20px;
 }
+
+.checkout-main {
+  padding: 20px;
+  padding-top: 0;
+}
+
+.checkout-product {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr;
+  background-color: lightgray;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  text-align: center;
+}
+
+.totalCheckout {
+  background-color: rgb(110, 110, 110);
+  font-weight: bold;
+  text-align: right;
+  padding: 1px 0;
+  padding-right: 10%;
+}
+
+.checkoutForm {
+  width: 60%;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkoutForm label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.checkoutForm label h5 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+}
