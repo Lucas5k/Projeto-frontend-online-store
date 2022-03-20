@@ -414,3 +414,20 @@ code {
 .rating label img:hover {
   cursor: pointer;
 }
+
+.avaliations {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(172, 172, 172);
+  width: 70%;
+  color: black;
+  padding: 0 10px;
+}
+
+.avaliations h3 {
+  margin: 10px auto;
+}
+
+.avaliations span {
+  margin-bottom: 10px;
+}

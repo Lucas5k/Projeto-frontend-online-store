@@ -149,22 +149,24 @@ class ProductPage extends Component {
               </button>
             </div>
           </section>
-          <div>
+          <section className="avaliations">
+            <h3>Avaliações</h3>
             {
               arraylenght
           && (
             productResume.map((elemento) => (
-              <section key={ elemento.email }>
+              <section key={ elemento.email } className="avaliations">
                 Email:
-                <span>{ elemento.email }</span>
+                <span key={ elemento.email }>{ elemento.email }</span>
                 Avaliação:
                 <span>{ elemento.evaluation }</span>
                 Nota:
                 <span>{ elemento.rating }</span>
+                <hr />
               </section>
             )))
             }
-          </div>
+          </section>
         </main>
       </>
     );
