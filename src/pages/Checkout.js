@@ -156,7 +156,7 @@ class Checkout extends Component {
               />
             </label>
             <label htmlFor="#">
-              Boleto
+              <img src="https://logodownload.org/wp-content/uploads/2019/09/boleto-logo.png" alt="Boleto bancário." />
               <input
                 type="radio"
                 name="payment"
@@ -165,24 +165,26 @@ class Checkout extends Component {
               />
             </label>
             <label htmlFor="#">
-              Cartão de Crédito
+              <img src="https://icons-for-free.com/iconfiles/png/512/payment+online+transaction+payment+method+visa+icon-1320186278106432321.png" alt="Visa." />
               <input
                 type="radio"
                 name="payment"
                 value="visa"
               />
+              <img src="https://pt.seaicons.com/wp-content/uploads/2015/06/Master-Card-icon.png" alt="Mastercard." />
               <input
                 type="radio"
                 name="payment"
                 value="masterCard"
               />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNVz95FWm_kkRqqIpLaghhI0RhW8IXQAEgngPXQwBIjkCyCVoZ1CMC8Kl-IyyKrroIB7Y&usqp=CAU" alt="Elo." />
               <input
                 type="radio"
                 name="payment"
                 value="elo"
               />
             </label>
-            <button type="submit">
+            <button type="button">
               Comprar
             </button>
           </form>
