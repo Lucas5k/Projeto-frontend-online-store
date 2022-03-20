@@ -396,3 +396,21 @@ code {
   display: flex;
   align-items: center;
 }
+
+.rating label {
+  user-select: none;
+}
+
+.rating label input {
+  display: none;
+}
+
+.rating label img {
+  width: 20px;
+  margin-right: 8px;
+  filter: brightness(0) saturate(100%) invert(90%) sepia(14%) saturate(22%) hue-rotate(313deg) brightness(93%) contrast(83%);
+}
+
+.rating label img:hover {
+  cursor: pointer;
+}

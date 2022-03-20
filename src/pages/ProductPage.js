@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import FreeShipping from '../components/FreeShipping';
 import Header from '../components/Header';
+import Rating from '../components/Rating';
 import { getProductsFromId } from '../services/api';
 
 class ProductPage extends Component {
@@ -138,41 +139,7 @@ class ProductPage extends Component {
                 className="txtareafield"
               />
               <span>Nota: </span>
-              <input
-                name="rating"
-                type="radio"
-                value="1"
-                onChange={ this.onChange }
-                data-testid="1-rating"
-              />
-              <input
-                name="rating"
-                type="radio"
-                value="2"
-                onChange={ this.onChange }
-                data-testid="2-rating"
-              />
-              <input
-                name="rating"
-                type="radio"
-                value="3"
-                onChange={ this.onChange }
-                data-testid="3-rating"
-              />
-              <input
-                name="rating"
-                type="radio"
-                value="4"
-                onChange={ this.onChange }
-                data-testid="4-rating"
-              />
-              <input
-                name="rating"
-                type="radio"
-                value="5"
-                onChange={ this.onChange }
-                data-testid="5-rating"
-              />
+              <Rating onChangeFuncProp={ this.onChange } />
               <button
                 data-testid="submit-review-btn"
                 onClick={ this.handleAvaliation }
