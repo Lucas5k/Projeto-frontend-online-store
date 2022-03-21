@@ -37,6 +37,11 @@ code {
   font-size: 30px;
 }
 
+.cartLink {
+  text-decoration: none;
+  position: relative;
+}
+
 .cartLink div {
   background-color: lightgray;
   padding: 10px 12px;
@@ -47,6 +52,26 @@ code {
 .cartLink img {
   width: 30px;
   align-self: center;
+}
+
+.cartLink div > div  {
+  background-color: blue;
+  border-radius: 100px;
+  width: 5px;
+  height: 10px;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartLink span {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
 }
 
 .main {
@@ -122,7 +147,7 @@ code {
   font-size: 15px;
 }
 
-.productShowroom button:hover, .productPageMain section button:hover {
+.productShowroom button:hover, .productPageMain section button:hover, .final-button:hover, .checkoutForm button:hover {
   cursor: pointer;
   background-color: rgb(44, 0, 163); 
 }
@@ -149,7 +174,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 200px;
+  width: 250px; 
 }
 
 .cardProduct img {
@@ -207,7 +232,7 @@ code {
   font-size: 20px;
 }
 
-.productPageMain section button {
+.productPageMain section button, .final-button, .checkoutForm button{
   width: 100%;
   height: 40px;
   padding: 2px 15px;
@@ -276,4 +301,133 @@ code {
 .cartMain > div {
   text-align: center;
   margin: auto;
+}
+
+.rate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.namefield {
+  margin-bottom: 20px;
+}
+
+.txtareafield {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 80px;
+  padding: 4px;
+  font-size: 15px;
+}
+
+.priceAndShipping {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.priceAndShipping img {
+  width: 30px;
+  filter: brightness(3) contrast(3) hue-rotate(-188deg) invert(1) saturate(1.76) sepia(0.61) ;
+  margin-right: 10px;
+}
+
+.priceAndShipping span {
+  color: greenyellow;
+}
+
+.priceAndShipping div {
+  display: flex;
+  align-items: center;
+}
+
+.rate button {
+  margin-top: 20px;
+}
+
+.checkout-main {
+  padding: 20px;
+  padding-top: 0;
+}
+
+.checkout-product {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr;
+  background-color: lightgray;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  text-align: center;
+}
+
+.totalCheckout {
+  background-color: rgb(110, 110, 110);
+  font-weight: bold;
+  text-align: right;
+  padding: 1px 0;
+  padding-right: 10%;
+}
+
+.checkoutForm {
+  width: 60%;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkoutForm label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.checkoutForm label h5 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.checkoutForm label img {
+  width: 50px;
+}
+
+.checkoutForm label:nth-child(n+8)  {
+  display: flex;
+  align-items: center;
+}
+
+.rating label {
+  user-select: none;
+}
+
+.rating label input {
+  display: none;
+}
+
+.rating label img {
+  width: 20px;
+  margin-right: 8px;
+  filter: brightness(0) saturate(100%) invert(90%) sepia(14%) saturate(22%) hue-rotate(313deg) brightness(93%) contrast(83%);
+}
+
+.rating label img:hover {
+  cursor: pointer;
+}
+
+.avaliations {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(172, 172, 172);
+  width: 70%;
+  color: black;
+  padding: 0 10px;
+}
+
+.avaliations h3 {
+  margin: 10px auto;
+}
+
+.avaliations span {
+  margin-bottom: 10px;
 }

@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import FreeShipping from '../components/FreeShipping';
 import Header from '../components/Header';
+import Rating from '../components/Rating';
 import { getProductsFromId } from '../services/api';
 
 class ProductPage extends Component {
@@ -107,10 +109,7 @@ class ProductPage extends Component {
           </aside>
           <section>
             <h1 data-testid="product-detail-name">{title}</h1>
-            <p>
-              R$
-              {String(Number(price).toFixed(2)).replace('.', ',')}
-            </p>
+            <FreeShipping price={ price } freeShipping={ freeShipping } />
             <button
               type="button"
               data-testid="product-detail-add-to-cart"
@@ -119,85 +118,55 @@ class ProductPage extends Component {
             >
               Adicionar ao Carrinho
             </button>
-            <input
-              data-testid="product-detail-email"
-              type="text"
-              name="email"
-              value={ email }
-              onChange={ this.onChange }
-            />
-            <textarea
-              data-testid="product-detail-evaluation"
-              type="text"
-              name="evaluation"
-              value={ evaluation }
-              onChange={ this.onChange }
-            />
-            <input
-              name="rating"
-              type="radio"
-              value="1"
-              onChange={ this.onChange }
-              data-testid="1-rating"
-            />
-            <input
-              name="rating"
-              type="radio"
-              value="2"
-              onChange={ this.onChange }
-              data-testid="2-rating"
-            />
-            <input
-              name="rating"
-              type="radio"
-              value="3"
-              onChange={ this.onChange }
-              data-testid="3-rating"
-            />
-            <input
-              name="rating"
-              type="radio"
-              value="4"
-              onChange={ this.onChange }
-              data-testid="4-rating"
-            />
-            <input
-              name="rating"
-              type="radio"
-              value="5"
-              onChange={ this.onChange }
-              data-testid="5-rating"
-            />
-            <button
-              data-testid="submit-review-btn"
-              onClick={ this.handleAvaliation }
-              type="button"
-            >
-              Submit
-            </button>
+            <div className="rate">
+              <p>Avaliação: </p>
+              <span>Nome: </span>
+              <input
+                data-testid="product-detail-email"
+                type="text"
+                name="email"
+                value={ email }
+                onChange={ this.onChange }
+                className="namefield"
+              />
+              <span>Comentário:</span>
+              <textarea
+                data-testid="product-detail-evaluation"
+                type="text"
+                name="evaluation"
+                value={ evaluation }
+                onChange={ this.onChange }
+                className="txtareafield"
+              />
+              <span>Nota: </span>
+              <Rating onChangeFuncProp={ this.onChange } />
+              <button
+                data-testid="submit-review-btn"
+                onClick={ this.handleAvaliation }
+                type="button"
+              >
+                Submit
+              </button>
+            </div>
           </section>
-          {freeShipping
-          && (
-            <span data-testid="free-shipping">
-              Frete Grátis!!
-            </span>
-          )}
-          <div>
+          <section className="avaliations">
+            <h3>Avaliações</h3>
             {
               arraylenght
           && (
             productResume.map((elemento) => (
-              <section key={ elemento.email }>
+              <section key={ elemento.email } className="avaliations">
                 Email:
-                <span>{ elemento.email }</span>
+                <span key={ elemento.email }>{ elemento.email }</span>
                 Avaliação:
                 <span>{ elemento.evaluation }</span>
                 Nota:
                 <span>{ elemento.rating }</span>
+                <hr />
               </section>
             )))
             }
-          </div>
+          </section>
         </main>
       </>
     );

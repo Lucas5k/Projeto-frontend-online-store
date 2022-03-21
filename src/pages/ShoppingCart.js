@@ -97,27 +97,32 @@ class ShoppingCart extends Component {
               </div>
             )
             : (
-              filterProducts.map((element) => (<CartItem
-                key={ element.id }
-                handle={ this.handleClick }
-                product={ element }
-                count={
-                  products.reduce((acc, curr) => {
-                    if (curr.id === element.id) {
-                      acc += 1;
+              <>
+                {filterProducts.map((element) => (
+                  <CartItem
+                    key={ element.id }
+                    handle={ this.handleClick }
+                    product={ element }
+                    count={
+                      products.reduce((acc, curr) => {
+                        if (curr.id === element.id) {
+                          acc += 1;
+                        }
+                        return acc;
+                      }, 0)
                     }
-                    return acc;
-                  }, 0)
-                }
-              />))
+                  />
+                ))}
+                <button
+                  data-testid="checkout-products"
+                  type="button"
+                  onClick={ this.redirectToCheckout }
+                  className="final-button"
+                >
+                  Finalizar compra
+                </button>
+              </>
             )}
-          <button
-            data-testid="checkout-products"
-            type="button"
-            onClick={ this.redirectToCheckout }
-          >
-            Finalizar compra
-          </button>
           {(checkout && <Redirect to="/checkout" />)}
         </main>
       </div>

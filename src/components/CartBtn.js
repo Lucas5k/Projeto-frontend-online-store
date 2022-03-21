@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 class CartBtn extends Component {
   constructor() {
@@ -36,7 +36,11 @@ class CartBtn extends Component {
       <Link data-testid="shopping-cart-button" to="/shoppingcart" className="cartLink">
         <div>
           <img src="https://cdn-icons-png.flaticon.com/512/34/34627.png" alt="Cart icon." />
-          <span data-testid="shopping-cart-size">{ cartCount }</span>
+          {Number(cartCount) !== 0 && (
+            <div>
+              <span data-testid="shopping-cart-size">{ cartCount }</span>
+            </div>
+          )}
         </div>
       </Link>
     );
