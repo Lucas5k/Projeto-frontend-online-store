@@ -1,6 +1,8 @@
 # Projeto-frontend-online-store
 
 <h1>Como acessar na sua máquina</h1>
+- Clone o repositório
+<p></p>
 
 Projeto em grupo, integrantes.
 
