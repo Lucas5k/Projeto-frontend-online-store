@@ -1,5 +1,7 @@
 # Projeto-frontend-online-store
 
+<h1>Como acessar na sua máquina</h1>
+
 Projeto em grupo, integrantes.
 
 - Danillo Gonçalves Batista.
