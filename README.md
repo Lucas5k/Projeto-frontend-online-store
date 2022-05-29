@@ -15,7 +15,7 @@
 <p>npm start</p>
 
 <h1>Página Rodando na web</h1>
- <a href="https://front-end-online-store-sigma.vercel.app/">Clique aqui</a><p>para ver a versão final do nosso projeto no seu navegador. Observação: é necessário habilitar o modo de visualização móvel se você estiver em um computador</p>
+ <a href="https://front-end-online-store-sigma.vercel.app/">Clique aqui</a><p>para ver a versão final do nosso projeto no seu navegador.</p>
 
 <h2>Sobre o Projeto</h2>
 <p>Neste projeto criamos uma versão simplificada, sem persistência no banco de dados, de uma loja online, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas, em um cenário mais próximo ao do mercado de trabalho.</p>
