@@ -18,7 +18,7 @@
  <a href="https://front-end-online-store-sigma.vercel.app/">Clique aqui</a><p>para ver a versão final do nosso projeto no seu navegador.</p>
 
 <h2>Sobre o Projeto</h2>
-<p>Neste projeto criamos uma versão simplificada, sem persistência no banco de dados, de uma loja online, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas, em um cenário mais próximo ao do mercado de trabalho.</p>
+<p>Esse foi o meu Quarto projeto no modúlo de front-end, No mesmo criamos uma versão simplificada de uma Loja Online, sem persistência no banco de dados, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas, em um cenário mais próximo ao do mercado de trabalho.</p>
 
 Projeto em grupo, integrantes.
 
