@@ -38,13 +38,13 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
 ## :soon: Implementação futura
 * O que será implementado na próxima sprint?
 
-## :handshake: Colaboradores
+## :handshake: Projeto em Grupo!
      - Danillo Gonçalves Batista.
      - Jovane Andreani de Castro.
      - Pedro Vieira Lopes.
      - Ruan Roussenq Alves.
      
-     <p>Css todo feito pelo, Jovane Andreani de Castro.</p>
+     - Css todo feito pelo, Jovane Andreani de Castro.
 </table>
 
 ## :dart: Status do projeto
