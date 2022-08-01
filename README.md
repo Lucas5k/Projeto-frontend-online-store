@@ -30,8 +30,7 @@ npm start
 ```
 ## Rodando na Web:
 
-<a href="https://front-end-online-store-sigma.vercel.app/">Clique aqui</a>
-<p>para ver a versão final do nosso projeto no seu navegador.</p>
+<a href="https://front-end-online-store-sigma.vercel.app/">Clique aqui</a><p>para ver a versão final do nosso projeto no seu navegador.</p>
 
 <!-- ## :soon: Implementação futura
 * O que será implementado na próxima sprint? -->
@@ -43,6 +42,5 @@ npm start
      - Ruan Roussenq Alves.
      
      - Css todo feito pelo, Jovane Andreani de Castro.
-</table>
 
 <!-- ## :dart: Status do projeto -->
