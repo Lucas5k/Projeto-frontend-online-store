@@ -47,7 +47,7 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
      - Pedro Vieira Lopes.
      - Ruan Roussenq Alves.
      
-     Css todo feito pelo, Jovane Andreani de Castro.
+     <p>Css todo feito pelo, Jovane Andreani de Castro.</p>
     </td>
   </tr>
 </table>
