@@ -39,17 +39,12 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
 * O que será implementado na próxima sprint?
 
 ## :handshake: Colaboradores
-<table>
-  <tr>
-    <td align="center">
      - Danillo Gonçalves Batista.
      - Jovane Andreani de Castro.
      - Pedro Vieira Lopes.
      - Ruan Roussenq Alves.
      
      <p>Css todo feito pelo, Jovane Andreani de Castro.</p>
-    </td>
-  </tr>
 </table>
 
 ## :dart: Status do projeto
