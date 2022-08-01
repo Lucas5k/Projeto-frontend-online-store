@@ -11,6 +11,9 @@ Esse foi o meu Quarto projeto no modúlo de front-end, No mesmo criamos uma vers
 
 ## :wrench: Tecnologias utilizadas
 * Tecnologia;
+- React (componente de classe)
+- Css
+- Local storage
 
 ## :rocket: Rodando o projeto
 Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
