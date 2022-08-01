@@ -33,16 +33,16 @@ Esse foi o meu Quarto projeto no modúlo de front-end, No mesmo criamos uma vers
 Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
 ```
 - Clone o repositório
-<p>git clone git@github.com:Lucas5k/Projeto-frontend-online-store.git</p>
+git clone git@github.com:Lucas5k/Projeto-frontend-online-store.git
 
 - Entre no arquivo do projeto
-<p>cd Projeto-frontend-online-store</p>
+cd Projeto-frontend-online-store
 
 - Instale as dependências
-<p>npm install</p>
+npm install
 
 - Inicialize o projeto
-<p>npm start</p>
+npm start
 
 ```
 
