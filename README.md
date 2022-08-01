@@ -20,14 +20,6 @@
 <h2>Sobre o Projeto</h2>
 <p>Esse foi o meu Quarto projeto no modúlo de front-end, No mesmo criamos uma versão simplificada de uma Loja Online, sem persistência no banco de dados, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas, em um cenário mais próximo ao do mercado de trabalho.</p>
 
-Projeto em grupo, integrantes.
-
-- Danillo Gonçalves Batista.
-- Jovane Andreani de Castro.
-- Pedro Vieira Lopes.
-- Ruan Roussenq Alves.
-
-Css todo feito pelo, Jovane Andreani de Castro.
 ## :memo: Descrição
 Esse foi o meu Quarto projeto no modúlo de front-end, No mesmo criamos uma versão simplificada de uma Loja Online, sem persistência no banco de dados, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas, em um cenário mais próximo ao do mercado de trabalho.
 
@@ -50,12 +42,12 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
 <table>
   <tr>
     <td align="center">
-      <a href="http://github.com/tatialveso">
-        <img src="https://avatars.githubusercontent.com/u/56259137?v=4" width="100px;" alt="Foto de Tati Alves no GitHub"/><br>
-        <sub>
-          <b>tatialveso</b>
-        </sub>
-      </a>
+     - Danillo Gonçalves Batista.
+     - Jovane Andreani de Castro.
+     - Pedro Vieira Lopes.
+     - Ruan Roussenq Alves.
+     
+     Css todo feito pelo, Jovane Andreani de Castro.
     </td>
   </tr>
 </table>
