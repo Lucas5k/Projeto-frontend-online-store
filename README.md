@@ -1,13 +1,13 @@
 # Projeto-frontend-online-store
 
-<h2>Sobre o Projeto</h2>
-<p>Esse foi o meu Quarto projeto no modúlo de front-end, No mesmo criamos uma versão simplificada de uma Loja Online, sem persistência no banco de dados, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas, em um cenário mais próximo ao do mercado de trabalho.</p>
-
 ## :memo: Descrição
 Esse foi o meu Quarto projeto no modúlo de front-end, No mesmo criamos uma versão simplificada de uma Loja Online, sem persistência no banco de dados, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas, em um cenário mais próximo ao do mercado de trabalho.
 
 ## :books: Funcionalidades
-* <b>Funcionalidade 1</b>: O que essa funcionalidade faz?
+* <b>Funcionalidade 1</b>: Buscar produtos por termos e categorias a partir da API do Mercado Livre;
+* <b>Funcionalidade 2</b>: Interagir com os produtos buscados de modo a adicioná-los e removê-los de um carrinho de compras em diferentes quantidades;
+* <b>Funcionalidade 3</b>: Visualizar detalhes e avaliações prévias de um produto, bem como criar novas avaliações;
+* <b>Funcionalidade 4</b>: E por fim, finalizar a compra (simulada) dos itens selecionados.
 
 ## :wrench: Tecnologias utilizadas
 * Tecnologia;
