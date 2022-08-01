@@ -47,4 +47,4 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
      - Css todo feito pelo, Jovane Andreani de Castro.
 </table>
 
-## :dart: Status do projeto
+<!-- ## :dart: Status do projeto -->
