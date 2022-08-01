@@ -10,7 +10,6 @@ Esse foi o meu Quarto projeto no modúlo de front-end, No mesmo criamos uma vers
 * <b>Funcionalidade 4</b>: E por fim, finalizar a compra (simulada) dos itens selecionados.
 
 ## :wrench: Tecnologias utilizadas
-* Tecnologia;
 - React (componente de classe)
 - Css
 - Local storage
