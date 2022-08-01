@@ -28,3 +28,36 @@ Projeto em grupo, integrantes.
 - Ruan Roussenq Alves.
 
 Css todo feito pelo, Jovane Andreani de Castro.
+## :memo: Descrição
+Esse foi o meu Quarto projeto no modúlo de front-end, No mesmo criamos uma versão simplificada de uma Loja Online, sem persistência no banco de dados, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas, em um cenário mais próximo ao do mercado de trabalho.
+
+## :books: Funcionalidades
+* <b>Funcionalidade 1</b>: O que essa funcionalidade faz?
+
+## :wrench: Tecnologias utilizadas
+* Tecnologia;
+
+## :rocket: Rodando o projeto
+Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
+```
+<linha de comando>
+```
+
+## :soon: Implementação futura
+* O que será implementado na próxima sprint?
+
+## :handshake: Colaboradores
+<table>
+  <tr>
+    <td align="center">
+      <a href="http://github.com/tatialveso">
+        <img src="https://avatars.githubusercontent.com/u/56259137?v=4" width="100px;" alt="Foto de Tati Alves no GitHub"/><br>
+        <sub>
+          <b>tatialveso</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+## :dart: Status do projeto
