@@ -4,12 +4,12 @@
 Esse foi o meu Quarto projeto no módulo de front-end, No mesmo criamos uma versão simplificada de uma Loja Online, sem persistência no banco de dados, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas, em um cenário mais próximo ao do mercado de trabalho.
 
 ## :books: Funcionalidades
-* <b>Funcionalidade 1</b>: Buscar produtos por termos e categorias a partir da API do Mercado Livre;
-* <b>Funcionalidade 2</b>: Interagir com os produtos buscados de modo a adicioná-los e removê-los de um carrinho de compras em diferentes quantidades;
-* <b>Funcionalidade 3</b>: Visualizar detalhes e avaliações prévias de um produto, bem como criar novas avaliações;
-* <b>Funcionalidade 4</b>: E por fim, finalizar a compra (simulada) dos itens selecionados.
+<ol><b>Funcionalidade 1</b>: Buscar produtos por termos e categorias a partir da API do Mercado Livre;</ol>
+<ol><b>Funcionalidade 2</b>: Interagir com os produtos buscados de modo a adicioná-los e removê-los de um carrinho de compras em diferentes quantidades;</ol>
+<ol><b>Funcionalidade 3</b>: Visualizar detalhes e avaliações prévias de um produto, bem como criar novas avaliações;</ol>
+<ol><b>Funcionalidade 4</b>: E por fim, finalizar a compra (simulada) dos itens selecionados.</ol>
 
-## :wrench: <h3>Tecnologias utilizadas</h3>
+## <h3>:wrench: Tecnologias utilizadas</h3>
 - React (componente de classe)
 - Css
 - Local storage
