@@ -9,7 +9,7 @@ Esse foi o meu Quarto projeto no módulo de front-end, No mesmo criamos uma vers
 * <b>Funcionalidade 3</b>: Visualizar detalhes e avaliações prévias de um produto, bem como criar novas avaliações;
 * <b>Funcionalidade 4</b>: E por fim, finalizar a compra (simulada) dos itens selecionados.
 
-## :wrench: Tecnologias utilizadas
+## :wrench: <h3>Tecnologias utilizadas</h3>
 - React (componente de classe)
 - Css
 - Local storage
